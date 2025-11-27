@@ -13,6 +13,12 @@ Perfect for winter events and holiday atmosphere ⛄
 - Light performance usage
 - Compatible with MultiAddonManager
 
+## 👤 Particle Author
+
+The snow particle used in this plugin was created by ✦ **kolkazadrot**
+Support the author / request new particles:
+➡️ https://discord.gg/ExzYpCxujb
+
 ---
 
 ## 📦 Requirements
