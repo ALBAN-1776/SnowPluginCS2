@@ -1,7 +1,3 @@
-# SnowPluginCS2
-A simple plugin for your server that will create a winter atmosphere
-
-
 ![Snow Preview](https://github.com/ALBAN-1776/SnowPluginCS2/blob/main/SNOW2.jpg?raw=1)
 
 # ❄️ SnowEffect Plugin for Counter-Strike 2
