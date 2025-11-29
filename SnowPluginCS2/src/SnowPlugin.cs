@@ -11,9 +11,9 @@ namespace SnowPluginCS2;
 public class SnowPlugin : BasePlugin, IPluginConfig<SnowConfig>
 {
     public override string ModuleName => "Snow Plugin";
-    public override string ModuleVersion => "1.2.0";
+    public override string ModuleVersion => "1.0.1";
     public override string ModuleAuthor => "ALBAN1776";
-    public override string ModuleDescription => "Creates snow particle with localization support";
+    public override string ModuleDescription => "Creates snow particle";
 
     public SnowConfig Config { get; set; } = new();
     private SnowData _data = new();
@@ -171,4 +171,5 @@ public class SnowPlugin : BasePlugin, IPluginConfig<SnowConfig>
             _activeParticles.Remove(slot);
         }
     }
+
 }
