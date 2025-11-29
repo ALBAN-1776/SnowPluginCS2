@@ -1,0 +1,4 @@
+{
+  "snow.enabled": "{Green}[Снег]{Default} Эффект {Green}включен",
+  "snow.disabled": "{Red}[Снег]{Default} Эффект {Red}выключен"
+}
