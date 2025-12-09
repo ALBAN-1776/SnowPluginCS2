@@ -33,6 +33,11 @@ public class SnowPlugin : BasePlugin, IPluginConfig<SnowConfig>
 
         RegisterListener<Listeners.OnClientConnected>(OnClientConnected);
         RegisterListener<Listeners.OnClientDisconnectPost>(OnClientDisconnect);
+
+        RegisterListener<Listeners.OnServerPrecacheResources>((manifest) =>
+        {
+            manifest.AddResource(Config.ParticleName);
+        });
     }
 
     private void LoadData()
@@ -173,3 +178,4 @@ public class SnowPlugin : BasePlugin, IPluginConfig<SnowConfig>
     }
 
 }
+
