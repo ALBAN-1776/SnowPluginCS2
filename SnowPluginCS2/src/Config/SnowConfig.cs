@@ -7,4 +7,7 @@ public class SnowConfig : BasePluginConfig
 {
     [JsonPropertyName("particle_name")]
     public string ParticleName { get; set; } = "particles/snow.vpcf";
+
+    [JsonPropertyName("CreateSnowOnConnect")]
+    public bool CreateSnowOnConnect { get; set; } = false;
 }

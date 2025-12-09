@@ -1,4 +1,4 @@
-﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Commands;
@@ -11,9 +11,9 @@ namespace SnowPluginCS2;
 public class SnowPlugin : BasePlugin, IPluginConfig<SnowConfig>
 {
     public override string ModuleName => "Snow Plugin";
-    public override string ModuleVersion => "1.0.1";
+    public override string ModuleVersion => "1.3.0";
     public override string ModuleAuthor => "ALBAN1776";
-    public override string ModuleDescription => "Creates snow particle";
+    public override string ModuleDescription => "Creates snow particle with localization support";
 
     public SnowConfig Config { get; set; } = new();
     private SnowData _data = new();
@@ -33,6 +33,11 @@ public class SnowPlugin : BasePlugin, IPluginConfig<SnowConfig>
 
         RegisterListener<Listeners.OnClientConnected>(OnClientConnected);
         RegisterListener<Listeners.OnClientDisconnectPost>(OnClientDisconnect);
+
+        RegisterListener<Listeners.OnServerPrecacheResources>((manifest) =>
+        {
+            manifest.AddResource(Config.ParticleName);
+        });
     }
 
     private void LoadData()
@@ -66,7 +71,16 @@ public class SnowPlugin : BasePlugin, IPluginConfig<SnowConfig>
 
     private void OnClientConnected(int slot)
     {
-        // When the player enters nothing needs to be done
+        var player = Utilities.GetPlayerFromSlot(slot);
+        if (player == null) return;
+
+        if (Config.CreateSnowOnConnect)
+        {
+            if (GetPlayerSnowState(player.SteamID))
+            {
+                AddTimer(0.3f, () => CreateSnow(player));
+            }
+        }
     }
 
     private void OnClientDisconnect(int slot)
@@ -171,5 +185,4 @@ public class SnowPlugin : BasePlugin, IPluginConfig<SnowConfig>
             _activeParticles.Remove(slot);
         }
     }
-
 }
