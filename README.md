@@ -27,17 +27,14 @@ Support the author / request new particles:
 |----------|-------------|
 | ❄ Snow particle | Must be uploaded to Steam Workshop |
 | MultiAddonManager | Required to download and mount workshop particles |
-| Any Precache plugin | Must precache the snow particle |
-| CSSharp plugin framework | The plugin itself runs on C# |
 
 ---
 
 ## 🔧 Installation
 
-1️⃣ Upload the snow particle (`.vpcf`) to Steam Workshop  
-2️⃣ Add Workshop item to server using **MultiAddonManager**  
-3️⃣ Precache the particle using any precache tool  
-4️⃣ Install this plugin into your CSSharp plugins folder  
-5️⃣ Configure the particle path in the config file:
+ Upload the snow particle (`.vpcf`) to Steam Workshop  
+ Add Workshop item to server using **MultiAddonManager**  
+ Install this plugin into your CSSharp plugins folder  
+ Configure the particle path in the config file:
 
 
